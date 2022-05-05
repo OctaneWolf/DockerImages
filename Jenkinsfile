@@ -5,6 +5,7 @@ pipeline {
             steps {
                 sh 'ls'
             }
+        }
         stage('Update on dockerHUB') {
             steps {
                 sh 'ls'
