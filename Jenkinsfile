@@ -3,7 +3,9 @@ pipeline {
     stages{
         stage('Create Images') {
             steps {
-                sh 'ls'
+                sh 'python3 Dockerdeploy.py'
+                sh 'pip install docker'
+                archiveArtifacts artifacts: 'images.list', fingerprint: true
             }
         }
         stage('Update on dockerHUB') {
